@@ -1,5 +1,4 @@
 export default {
-    mode: 'universal',
     telemetry: false, //https://github.com/nuxt/telemetry
 
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -21,6 +20,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+      '~/assets/scss/index.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -40,5 +40,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+      loaders: {
+          scss: {
+              additionalData: `
+              @import "~@/assets/scss/variables"; // override bootstrap variables and load to vue components
+              @import "~bootstrap/scss/functions";
+              @import "~bootstrap/scss/variables";
+             `,
+              sassOptions: {
+                  // indentedSyntax: true,
+              },
+          }
+      },
+
   }
 }
