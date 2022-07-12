@@ -1,5 +1,8 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+    mode: 'universal',
+    telemetry: false, //https://github.com/nuxt/telemetry
+
+    // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-bootstrap',
     htmlAttrs: {
